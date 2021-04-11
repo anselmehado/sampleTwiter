@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>MBlogs Dive</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/sample.css">
+</head>
+<body>
+  <header class="header clearfix">
+
+    <ul class="menu_horizontal">
+		<li class="bouton_gauche"><a href="#">Blogs Dive</a></li>
+    </ul>
+  </header>
+
+  <h1>Blog list</h1>
+
+  <% @posts.each do |post| %>
+
+  <label for="w3review">Review of W3Schools:</label> <%= post.created_at %> <br>
+
+<textarea id="w3review" name="w3review" rows="4" cols="25">
+  <%= post.content %>
+</textarea> <br>
+<label for="w3review">Autheur</label>   <%= post.Autheur %>
+<button type="submit" name="button">Edit</button>
+<button type="submit" name="button">Delete</button>
+<br>
+
+
+
+  <% end %>
+  <br>
+
+  <button type="submit" name="add">Ajouter un Tweet</button>
+  <%= link_to 'Post a new blog', new_post_path %>
+
+
+
+
+
+
+
+
+<footer>
+  <p>Product by Anselme HADO ​</p>
+  <p>© 2020-2021 Copyright DIVE ​ CODE Corp.</p>
+</footer>
+</body>
+</html>
