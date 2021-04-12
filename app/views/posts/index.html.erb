@@ -19,23 +19,23 @@
 
   <% @posts.each do |post| %>
 
-  <label for="w3review">Review of W3Schools:</label> <%= post.created_at %> <br>
+    <label for="">Date de creation du blog:</label> <%= post.created_at %> <br>
 
 <textarea id="w3review" name="w3review" rows="4" cols="25">
   <%= post.content %>
 </textarea> <br>
-<label for="w3review">Autheur</label>   <%= post.Autheur %>
-<button type="submit" name="button">Edit</button>
-<button type="submit" name="button">Delete</button>
+<label for="w3review">Autheur :</label>   <%= post.Autheur %>
+
+
+<a href="<%= post_path(post.id) %>" class="bt-btn-primary">Edit</a>
+
+<a href="<%= post_path(post.id) %> "  method: :delete  >eeee</a>
+
 <br>
-
-
-
   <% end %>
   <br>
 
-  <button type="submit" name="add">Ajouter un Tweet</button>
-  <%= link_to 'Post a new blog', new_post_path %>
+
 
 
 

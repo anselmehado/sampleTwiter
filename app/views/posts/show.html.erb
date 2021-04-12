@@ -1,2 +1,13 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<%= form_with(model: @post, local: true) do |form| %>
+
+  <div class="post_Autheur">
+    <%= form.label :Autheur %>
+    <%= form.text_field :Autheur %>
+  </div>
+  <div class="post_content">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+  <%= form.submit %>
+
+    <% end %>
