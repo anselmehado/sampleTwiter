@@ -20,20 +20,41 @@ class PostsController < ApplicationController
 
   end
 
+
+
   def create
-    @post = Post.new(post_params)
-      if @post.save
-        # 一覧画面へ遷移して"I have created a blog!"とメッセージを表示します。
-     redirect_to posts_path, notice: "I have created a post"
-     #redirect_to new_blog_path
-   else
-     render :new
-   end
-    # renvoi une nvlle page pour poster a nouveau un blog redirect_to
-    #"/blogs/new"= redirect_to new_blog_path
-    #redirect_to "/blogs/new"
-    #redirect_to new_blog_path
-  end
+      @post = Post.new(post_params)
+      if params[:back]
+        render :new
+      else
+        if @post.save
+          redirect_to posts_path, notice: "ブログを作成しました！"
+        else
+          render :new
+        end
+      end
+    end
+
+
+
+
+
+
+
+  # def create
+  #   @post = Post.new(post_params)
+  #     if @post.save
+  #       # 一覧画面へ遷移して"I have created a blog!"とメッセージを表示します。
+  #    redirect_to posts_path, notice: "I have created a post"
+  #    #redirect_to new_blog_path
+  #  else
+  #    render :new
+  #  end
+  #   # renvoi une nvlle page pour poster a nouveau un blog redirect_to
+  #   #"/blogs/new"= redirect_to new_blog_path
+  #   #redirect_to "/blogs/new"
+  #   #redirect_to new_blog_path
+  # end
 
   def update
 
@@ -54,6 +75,10 @@ class PostsController < ApplicationController
     redirect_to posts_path, notice:"I deleted the blog!"
   end
 
+    def confirm
+      @post = Post.new(post_params)
+    #  render :new if @post.invalid?
+    end
 
 
   private
