@@ -25,6 +25,7 @@ class PostsController < ApplicationController
       if @post.save
         # 一覧画面へ遷移して"I have created a blog!"とメッセージを表示します。
      redirect_to posts_path, notice: "I have created a post"
+     #redirect_to new_blog_path
    else
      render :new
    end
@@ -44,6 +45,9 @@ class PostsController < ApplicationController
     end
   end
 
+    def set_post
+      @post = Post.find(params[:id])
+    end
 
   def destroy
     @post.destroy
@@ -51,9 +55,6 @@ class PostsController < ApplicationController
   end
 
 
-  def set_post
-    @post = Post.find(params[:id])
-  end
 
   private
   def post_params

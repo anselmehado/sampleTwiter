@@ -17,7 +17,10 @@
 
   <h1>Blog list</h1>
 
+  <p><%=notice %></p>
+
   <% @posts.each do |post| %>
+
 
     <label for="">Date de creation du blog:</label> <%= post.created_at %> <br>
 
@@ -27,13 +30,14 @@
 <label for="w3review">Autheur :</label>   <%= post.Autheur %>
 
 
-<a href="<%= post_path(post.id) %>" class="bt-btn-primary">Edit</a>
-
-<a href="<%= post_path(post.id) %> "  method: :delete  >eeee</a>
+<a href="<%= edit_post_path(post.id) %> " class="bt-btn-primary">Edit</a>
+<td><%= link_to 'Delete post', post_path(post.id), method: :delete,data: { confirm: 'Can I really edit it?' } %></td>
 
 <br>
   <% end %>
+
   <br>
+<%= link_to 'Post a new blog', new_post_path %>
 
 
 
