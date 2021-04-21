@@ -1,5 +1,7 @@
 {
   "name": "sampleTwiter",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "3"
+  }
 }

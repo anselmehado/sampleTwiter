@@ -27,7 +27,9 @@ class PostsController < ApplicationController
       if params[:back]
         render :new
       else
+        
         if @post.save
+
           redirect_to posts_path, notice: "ブログを作成しました！"
         else
           render :new
@@ -77,7 +79,7 @@ class PostsController < ApplicationController
 
     def confirm
       @post = Post.new(post_params)
-    #  render :new if @post.invalid?
+      render :new if @post.invalid?
     end
 
 
