@@ -1,3 +1,5 @@
 class Post < ApplicationRecord
-  validates :Autheur, :content, presence: true
+  validates :Autheur, presence: true
+  validates :content, presence: true, length: {maximum: 140}
+
 end
