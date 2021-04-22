@@ -1,6 +1,4 @@
 
-# Configure Using Gemfile
-# gem 'pg'
 
 default: &default
   adapter: postgresql
@@ -17,9 +15,6 @@ test:
   <<: *default
   database: sampleTwiter_test
 
-
-#     url: <%= ENV['DATABASE_URL'] %>
-#
 production:
   <<: *default
   database: sampleTwiter_production
