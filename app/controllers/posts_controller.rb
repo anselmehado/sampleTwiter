@@ -29,7 +29,7 @@ class PostsController < ApplicationController
           render :new
         end
       end
-  end
+    end
 
   def update
       if @post.update(post_params)

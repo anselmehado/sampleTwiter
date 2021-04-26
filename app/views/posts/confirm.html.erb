@@ -1,10 +1,7 @@
 <h3>Les informations suivantes doivent être envoyées.</h3>
 <%= form_with(model: @post, url: posts_path, local: true) do |form| %>
 
-<div class="post_Autheur">
-  <%= form.label :Autheur %>
-  <%= form.text_field :Autheur %>
-</div> <br>
+
 
 <div class="post_content">
   <%= form.label :content %>
