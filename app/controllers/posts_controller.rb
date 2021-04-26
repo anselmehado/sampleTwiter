@@ -23,27 +23,23 @@ class PostsController < ApplicationController
       if params[:back]
         render :new
       else
-
         if @post.save
-
           redirect_to posts_path, notice: "ブログを作成しました！"
         else
           render :new
         end
       end
-    end
+  end
 
-
-    def update
-
+  def update
       if @post.update(post_params)
         redirect_to posts_path, notice: "I edited the blog!"
       else
         render :edit
       end
-    end
+  end
 
-    def set_post
+  def set_post
         @post = Post.find(params[:id])
     end
 
@@ -56,7 +52,6 @@ class PostsController < ApplicationController
         @post = Post.new(post_params)
         render :new if @post.invalid?
     end
-
 
     private
     def post_params
